@@ -1,15 +1,15 @@
 import Hero from '@/components/Hero';
-import HowWeHelp from '@/components/HowWeHelp';
-import Services from '@/components/Services';
-import WhyChooseUs from '@/components/WhyChooseUs';
+import TrustBar from '@/components/TrustBar';
+import ProcessSection from '@/components/ProcessSection';
+import Testimonials from '@/components/Testimonials';
 
 export default function Home() {
   return (
     <>
       <Hero />
-      <HowWeHelp />
-      <Services />
-      <WhyChooseUs />
+      <TrustBar />
+      <Testimonials />
+      <ProcessSection />
     </>
   );
 }

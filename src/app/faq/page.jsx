@@ -73,7 +73,7 @@ export default function FAQPage() {
         <div className="max-w-[800px] mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="text-center mb-16">
-            <span className="text-[#ff8c00] font-bold text-[13px] tracking-wider uppercase mb-3 block">
+            <span className="text-[#00ace0] font-bold text-[13px] tracking-wider uppercase mb-3 block">
               HAVE QUESTIONS?
             </span>
             <h1 className="text-[36px] md:text-[45px] font-bold text-brand-dark mb-6">
@@ -90,7 +90,7 @@ export default function FAQPage() {
                 key={idx} 
                 className="group bg-white border border-gray-200 rounded-xl overflow-hidden [&_summary::-webkit-details-marker]:hidden shadow-sm"
               >
-                <summary className="flex items-center justify-between p-6 cursor-pointer font-bold text-[16px] text-brand-dark hover:text-[#ff8c00] transition-colors">
+                <summary className="flex items-center justify-between p-6 cursor-pointer font-bold text-[16px] text-brand-dark hover:text-[#00ace0] transition-colors">
                   <span>{faq.q}</span>
                   <span className="ml-4 flex-shrink-0 transition-transform duration-300 group-open:rotate-180">
                     <svg className="w-5 h-5 text-brand-slate" fill="none" viewBox="0 0 24 24" stroke="currentColor">

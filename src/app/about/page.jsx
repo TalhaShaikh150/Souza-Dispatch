@@ -37,11 +37,11 @@ export default function AboutPage() {
       <section className="relative py-20 lg:py-32 bg-brand-dark overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
           {/* Subtle background pattern */}
-          <div className="absolute w-[500px] h-[500px] bg-[#ff8c00] rounded-full blur-[150px] -top-[200px] -right-[100px]"></div>
+          <div className="absolute w-[500px] h-[500px] bg-[#00ace0] rounded-full blur-[150px] -top-[200px] -right-[100px]"></div>
         </div>
         
         <div className="relative max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <span className="text-[#ff8c00] font-bold text-[13px] tracking-wider uppercase mb-3 block">
+          <span className="text-[#00ace0] font-bold text-[13px] tracking-wider uppercase mb-3 block">
             ABOUT SOUZADISPATCH
           </span>
           <h1 className="text-[36px] sm:text-[45px] lg:text-[55px] font-bold text-white mb-6 leading-tight max-w-3xl mx-auto">
@@ -85,7 +85,7 @@ export default function AboutPage() {
               </div>
               
               <div className="mt-10">
-                <Link href="/contact" className="inline-flex items-center justify-center px-8 py-4 bg-[#ff8c00] text-white font-bold rounded-lg hover:bg-[#e07b00] transition-colors shadow-sm">
+                <Link href="/contact" className="inline-flex items-center justify-center px-8 py-4 bg-[#00ace0] text-white font-bold rounded-lg hover:bg-[#0095c2] transition-colors shadow-sm">
                   Work With Us
                 </Link>
               </div>
@@ -107,7 +107,7 @@ export default function AboutPage() {
               return (
                 <div key={idx} className="bg-white p-8 lg:p-10 rounded-[24px] shadow-sm border border-gray-100 flex gap-6">
                   <div className="flex-shrink-0">
-                    <div className="w-14 h-14 rounded-2xl bg-[#ff8c00]/10 flex items-center justify-center text-[#ff8c00]">
+                    <div className="w-14 h-14 rounded-2xl bg-[#00ace0]/10 flex items-center justify-center text-[#00ace0]">
                       <Icon className="w-7 h-7" />
                     </div>
                   </div>

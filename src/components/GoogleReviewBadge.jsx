@@ -98,7 +98,7 @@ export default function GoogleReviewBadge() {
 
               <div>
                 <div className="flex items-center gap-1.5">
-                  <span className="font-bold text-[16px] text-orange-500">5.0</span>
+                  <span className="font-bold text-[16px] text-[#00ace0]">5.0</span>
                   <div className="flex text-[#ff9800]">
                     {[...Array(5)].map((_, i) => (
                       <svg key={i} className="w-4 h-4 fill-[#ff9800]" viewBox="0 0 20 20">

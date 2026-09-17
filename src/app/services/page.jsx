@@ -28,7 +28,7 @@ export default function ServicesPage() {
           <p className="text-brand-slate max-w-[600px] mx-auto mb-10 leading-relaxed">
             Contact us today for a free, no-obligation quote. Our team is ready to help make your next move your best move.
           </p>
-          <Link href="/contact" className="px-8 py-4 bg-[#ff8c00] text-white text-[16px] font-bold rounded-lg shadow-sm hover:bg-[#e07b00] transition-colors inline-block">
+          <Link href="/contact" className="px-8 py-4 bg-[#00ace0] text-white text-[16px] font-bold rounded-lg shadow-sm hover:bg-[#0095c2] transition-colors inline-block">
             Get Your Free Quote
           </Link>
         </div>

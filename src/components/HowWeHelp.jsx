@@ -38,7 +38,7 @@ export default function HowWeHelp() {
         
         {/* Section Header */}
         <div className="mb-16 lg:mb-20 text-center max-w-3xl mx-auto">
-          <span className="text-[#ff8c00] font-bold text-[13px] tracking-wider uppercase mb-3 block">
+          <span className="text-[#00ace0] font-bold text-[13px] tracking-wider uppercase mb-3 block">
             WHAT WE DO
           </span>
           <h2 className="text-[36px] sm:text-[42px] lg:text-[48px] font-bold text-[#0f172a] leading-[1.1] mb-6">
@@ -68,7 +68,7 @@ export default function HowWeHelp() {
               
               {/* Content Overlay */}
               <div className="absolute inset-0 p-8 sm:p-10 flex flex-col justify-end">
-                <span className="w-10 h-1 bg-[#ff8c00] rounded-full mb-4 transform origin-left transition-all duration-300 group-hover:w-16"></span>
+                <span className="w-10 h-1 bg-[#00ace0] rounded-full mb-4 transform origin-left transition-all duration-300 group-hover:w-16"></span>
                 <h3 className="text-[24px] sm:text-[28px] font-bold text-white mb-3 leading-tight drop-shadow-md">
                   {item.title}
                 </h3>

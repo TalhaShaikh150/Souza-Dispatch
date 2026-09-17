@@ -99,7 +99,7 @@ export default function ServicePage({ params }) {
           
           <div className="bg-brand-white rounded-3xl shadow-sm border border-brand-gray/50 overflow-hidden">
             <div className="p-8 md:p-16 lg:p-20 text-center max-w-[900px] mx-auto">
-              <span className="text-[#ff8c00] font-bold text-[14px] tracking-widest uppercase mb-4 block">
+              <span className="text-[#00ace0] font-bold text-[14px] tracking-widest uppercase mb-4 block">
                 {service.serviceType}
               </span>
               <h1 className="text-[36px] md:text-[50px] font-bold text-brand-dark mb-6 leading-tight">
@@ -119,7 +119,7 @@ export default function ServicePage({ params }) {
               </div>
 
               <div className="flex flex-col sm:flex-row justify-center gap-4">
-                <Link href="/contact" className="px-8 py-4 bg-[#ff8c00] text-white text-[16px] font-bold rounded-lg shadow-sm hover:bg-[#e07b00] transition-colors inline-flex justify-center items-center">
+                <Link href="/contact" className="px-8 py-4 bg-[#00ace0] text-white text-[16px] font-bold rounded-lg shadow-sm hover:bg-[#0095c2] transition-colors inline-flex justify-center items-center">
                   Request a Free Quote
                 </Link>
                 <a href="https://wa.me/447862036671" className="px-8 py-4 bg-brand-green text-white text-[16px] font-bold rounded-lg shadow-sm hover:bg-brand-greenLight transition-colors inline-flex justify-center items-center">
