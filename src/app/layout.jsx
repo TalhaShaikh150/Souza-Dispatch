@@ -30,8 +30,8 @@ export default function RootLayout({
   children,
 }) {
   return (
-    <html lang="en" className={`${poppins.variable} ${inter.variable} ${plusJakarta.variable}`}>
-      <body className={`${poppins.className} antialiased text-brand-dark bg-brand-white relative min-h-screen`}>
+    <html lang="en" className={`${poppins.variable} ${inter.variable} ${plusJakarta.variable} overflow-x-hidden`}>
+      <body className={`${poppins.className} antialiased text-brand-dark bg-brand-white relative min-h-screen overflow-x-hidden`}>
         <Header />
         
         {/* LocalBusiness Schema for Google Business Profile Optimization */}
@@ -61,7 +61,7 @@ export default function RootLayout({
           }}
         />
 
-        <main id="main-content">
+        <main id="main-content" className="w-full overflow-x-hidden flex-grow">
           {children}
         </main>
 
