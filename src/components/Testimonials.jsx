@@ -78,7 +78,7 @@ const reviews = [
 
 export default function Testimonials() {
   return (
-    <section className="py-24 lg:py-32 bg-[#f6f9fc]">
+    <section className="py-12 lg:py-16 bg-[#f6f9fc]">
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 relative">
         
         {/* Header */}
@@ -95,10 +95,10 @@ export default function Testimonials() {
         </div>
 
         {/* Trustindex Summary Bar */}
-        <div className="bg-white rounded-xl border border-gray-200 p-4 flex flex-col sm:flex-row items-center justify-between shadow-sm mb-8">
-          <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-0">
+        <div className="bg-white rounded-xl border border-gray-200 p-4 sm:p-5 flex flex-col md:flex-row items-center justify-between shadow-sm mb-8 gap-4 md:gap-0">
+          <div className="flex flex-wrap items-center justify-center md:justify-start gap-x-3 gap-y-2">
             {/* Google Text Logo Approximation */}
-            <div className="flex items-center text-[22px] font-medium tracking-tighter mr-2">
+            <div className="flex items-center text-[20px] sm:text-[22px] font-medium tracking-tighter">
               <span className="text-[#4285F4]">G</span>
               <span className="text-[#EA4335]">o</span>
               <span className="text-[#FBBC05]">o</span>
@@ -108,18 +108,18 @@ export default function Testimonials() {
             </div>
             
             {/* Stars */}
-            <div className="flex items-center text-[#FBBC05] text-[18px]">
+            <div className="flex items-center text-[#FBBC05] text-[16px] sm:text-[18px]">
               ★★★★★
             </div>
             
             {/* Rating */}
-            <div className="flex items-center gap-2 text-[14px] sm:text-[15px] font-bold text-[#0f172a]">
+            <div className="flex items-center gap-1.5 sm:gap-2 text-[13px] sm:text-[15px] font-bold text-[#0f172a]">
               5.0 <span className="font-normal text-gray-300">|</span> Top Rated Service
             </div>
           </div>
           
-          <div className="relative group flex-shrink-0 cursor-help mt-4 sm:mt-0">
-            <div className="bg-[#1b7b54] text-white text-[13px] font-medium px-4 py-2 rounded flex items-center gap-1.5 shadow-sm hover:bg-[#156343] transition-colors">
+          <div className="relative group flex-shrink-0 cursor-help">
+            <div className="bg-[#1b7b54] text-white text-[12px] sm:text-[13px] font-medium px-3 sm:px-4 py-2 rounded flex items-center gap-1.5 shadow-sm hover:bg-[#156343] transition-colors">
               Verified by Trustindex
               <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <circle cx="12" cy="12" r="10"></circle>
@@ -129,12 +129,12 @@ export default function Testimonials() {
             </div>
             
             {/* Tooltip Popup */}
-            <div className="absolute bottom-full right-0 mb-3 w-[280px] sm:w-[320px] bg-white border border-gray-800 rounded-lg shadow-2xl p-4 sm:p-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 text-left transform translate-y-2 group-hover:translate-y-0 origin-bottom-right">
+            <div className="hidden md:block absolute bottom-full right-0 mb-3 w-[320px] bg-white border border-gray-800 rounded-lg shadow-2xl p-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 text-left transform translate-y-2 group-hover:translate-y-0 origin-bottom-right">
               
               {/* Downward pointing caret with border */}
               <div className="absolute top-full right-6 w-3.5 h-3.5 bg-white border-b border-r border-gray-800 transform rotate-45 -translate-y-[8px]"></div>
               
-              <p className="text-[13.5px] sm:text-[14.5px] text-[#0f172a] leading-relaxed relative z-10">
+              <p className="text-[14.5px] text-[#0f172a] leading-relaxed relative z-10">
                 <span className="font-bold">Trustindex verified badge is the Universal Symbol of Trust.</span> Only the greatest companies can get the verified badge who has a review score above 4.5, based on customer reviews over the past 12 months.{" "}
                 <a 
                   href="https://www.trustindex.io/the-trustindex-verified-badge/" 
@@ -150,7 +150,7 @@ export default function Testimonials() {
         </div>
 
         {/* Swiper Carousel Container with Custom Arrows */}
-        <div className="relative -mx-4 sm:mx-0 group">
+        <div className="relative -mx-4 sm:mx-0 group min-w-0 overflow-hidden sm:overflow-visible">
           <Swiper
             modules={[Autoplay, Navigation]}
             navigation={{
@@ -168,7 +168,7 @@ export default function Testimonials() {
             className="pb-8 px-4 sm:px-0"
           >
             {reviews.map((review, idx) => (
-              <SwiperSlide key={idx} className="!w-[300px] sm:!w-[340px] !h-auto flex">
+              <SwiperSlide key={idx} className="!w-[280px] min-[375px]:!w-[300px] sm:!w-[340px] !h-auto flex">
                 <div className="w-full h-full bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow relative flex flex-col">
                   
                   {/* Header: Avatar, Name, Time, Google Logo */}
