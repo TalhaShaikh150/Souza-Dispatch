@@ -6,21 +6,21 @@ export default function TrustBar() {
       <div className="max-w-[1400px] mx-auto px-6">
         <div className="flex flex-wrap justify-between items-center gap-y-6">
           
-          <div className="w-1/2 lg:w-auto flex items-center justify-center lg:justify-start gap-4">
+          <div className="w-full sm:w-1/2 lg:w-auto flex items-center justify-center lg:justify-start gap-4">
             <span className="text-3xl lg:text-4xl font-extrabold text-white font-heading">10<span className="text-[#ff8c00]">+</span></span>
             <span className="text-xs uppercase tracking-widest font-bold text-gray-300 leading-snug">Years in<br />Business</span>
           </div>
 
           <div className="hidden lg:block w-px h-10 bg-gray-700"></div>
 
-          <div className="w-1/2 lg:w-auto flex items-center justify-center lg:justify-start gap-4">
+          <div className="w-full sm:w-1/2 lg:w-auto flex items-center justify-center lg:justify-start gap-4">
             <span className="text-3xl lg:text-4xl font-extrabold text-white font-heading">100s</span>
             <span className="text-xs uppercase tracking-widest font-bold text-gray-300 leading-snug">Moves<br />Completed</span>
           </div>
 
           <div className="hidden lg:block w-px h-10 bg-gray-700"></div>
 
-          <div className="w-1/2 lg:w-auto flex items-center justify-center lg:justify-start gap-3">
+          <div className="w-full sm:w-1/2 lg:w-auto flex items-center justify-center lg:justify-start gap-3">
             <div className="bg-[#ff8c00]/10 p-2 rounded-full text-[#ff8c00]">
               <Video className="w-5 h-5" />
             </div>
@@ -29,7 +29,7 @@ export default function TrustBar() {
 
           <div className="hidden lg:block w-px h-10 bg-gray-700"></div>
 
-          <div className="w-1/2 lg:w-auto flex items-center justify-center lg:justify-start gap-3">
+          <div className="w-full sm:w-1/2 lg:w-auto flex items-center justify-center lg:justify-start gap-3">
             <div className="bg-[#ff8c00]/10 p-2 rounded-full text-[#ff8c00]">
               <Tag className="w-5 h-5" />
             </div>

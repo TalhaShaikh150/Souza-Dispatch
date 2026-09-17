@@ -16,8 +16,10 @@ export default function Hero() {
         
         {/* Left Content (Col 7) */}
         <div className="md:col-span-7 space-y-6 lg:space-y-8">
-          <h1 className="text-[32px] sm:text-4xl lg:text-5xl xl:text-[52px] font-extrabold tracking-tight text-[#0f172a] leading-[1.1] uppercase" style={{ fontFamily: 'var(--font-heading-alt)' }}>
-            MOVING MADE EFFORTLESS.<br />START WITH <span className="text-[#ff8c00]">SOUZADISPATCH.</span>
+          <h1 className="text-[24px] min-[375px]:text-[28px] sm:text-4xl md:text-[42px] lg:text-5xl xl:text-[52px] font-extrabold tracking-tight text-[#0f172a] leading-[1.15] sm:leading-[1.1] uppercase drop-shadow-sm break-words" style={{ fontFamily: 'var(--font-heading-alt)' }}>
+            MOVING MADE EFFORTLESS.<br className="hidden sm:block" />
+            <span className="sm:hidden"> </span>
+            START WITH <span className="text-[#ff8c00]">SOUZADISPATCH.</span>
           </h1>
           
           <p className="text-base lg:text-lg text-gray-600 leading-relaxed max-w-xl">
@@ -54,8 +56,8 @@ export default function Hero() {
         </div>
         
         {/* Right Visual (Col 5) */}
-        <div className="md:col-span-5 relative">
-          <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-slate-100 aspect-[4/3] md:aspect-auto md:h-[300px] lg:h-[320px] xl:h-[380px]">
+        <div className="md:col-span-5 relative mt-8 md:mt-0">
+          <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-slate-100 h-[280px] sm:h-[360px] md:aspect-auto md:h-[300px] lg:h-[320px] xl:h-[380px]">
             
             <Swiper
               modules={[Autoplay, EffectFade]}
