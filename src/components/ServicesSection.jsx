@@ -1,81 +1,97 @@
-import Image from 'next/image';
-import Link from 'next/link';
+"use client";
 
-const services = [
-  {
-    title: "Home & flat moves",
-    desc: "Studios to four-beds. Stairs, tight corners and awkward London parking included.",
-    img: "/assets/imgi_20_three-of-us-2.jpg",
-    link: "/services/local-moving"
-  },
-  {
-    title: "Office & business moves",
-    desc: "Out of hours and weekends so your team walks into a working office on Monday.",
-    img: "/assets/imgi_17_driving.jpg",
-    link: "/services/office-removals"
-  },
-  {
-    title: "Pack and move",
-    desc: "We bring the boxes, tape and blankets, pack the house and unpack at the other end.",
-    img: "/assets/imgi_18_loading-mattress.jpg",
-    link: "/services/furniture-removal"
-  },
-  {
-    title: "Student moves",
-    desc: "Halls, house shares and single-item runs, priced for a student budget.",
-    img: "/assets/imgi_19_cap-dash.jpg",
-    link: "/services/man-and-van"
-  }
-];
+import Image from "next/image";
+import { ArrowRight, Settings } from "lucide-react";
 
 export default function ServicesSection() {
+  const services = [
+    {
+      title: "Residential Moving",
+      description: "Safe and smooth home relocation handled with care from start to finish.",
+    },
+    {
+      title: "Commercial Moving",
+      description: "Efficient business and office moving with minimal downtime and disruption.",
+    },
+    {
+      title: "Packing Services",
+      description: "Professional packing to protect your belongings during every step of the move.",
+    },
+    {
+      title: "Long-Distance Moving",
+      description: "Reliable and secure moving services across cities and long distances.",
+    },
+    {
+      title: "Furniture Moving",
+      description: "Careful handling and transport of heavy and valuable furniture items.",
+    },
+    {
+      title: "Loading & Unloading",
+      description: "Fast and safe loading and unloading to save your time and effort.",
+    }
+  ];
+
   return (
-    <section className="py-12 lg:py-16 bg-white">
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-8">
+    <section className="py-24 lg:py-32 bg-[#f9fafb]">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 lg:mb-16">
-          <div>
-            <span className="text-[#ff8c00] font-bold text-[12px] tracking-widest uppercase mb-3 block">
-              WHAT WE DO
-            </span>
-            <h2 className="text-[32px] sm:text-[40px] lg:text-[48px] font-extrabold text-[#0f172a] leading-tight font-heading">
-              Four jobs, done properly
-            </h2>
+        <div className="text-center max-w-2xl mx-auto mb-16 lg:mb-20">
+          <div className="inline-flex items-center gap-2 bg-white rounded-full py-1.5 px-4 mb-6 shadow-sm border border-gray-100">
+            <div className="bg-gray-100 rounded-full p-1 shadow-sm">
+              <Settings className="w-3 h-3 text-brand-primary" />
+            </div>
+            <span className="text-[13px] font-bold text-gray-700">Our Service</span>
           </div>
           
-          <Link 
-            href="/services" 
-            className="inline-flex items-center gap-2 text-[#0f172a] hover:text-[#ff8c00] font-bold text-[15px] transition-colors pb-2"
-          >
-            All services <span aria-hidden="true">&rarr;</span>
-          </Link>
+          <h2 className="text-[36px] sm:text-[42px] lg:text-[48px] font-extrabold text-gray-900 leading-[1.15] tracking-tight">
+            Our Moving <span className="text-brand-primary relative inline-block">
+              Services
+              <svg className="absolute w-full h-3 -bottom-1 left-0 text-brand-primary" viewBox="0 0 200 20" fill="none" preserveAspectRatio="none">
+                <path d="M5 15Q100 0 195 15" stroke="currentColor" strokeWidth="4" strokeLinecap="round" />
+              </svg>
+            </span>
+          </h2>
         </div>
 
         {/* Grid */}
-        <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
-          {services.map((svc, idx) => (
-            <Link href={svc.link} key={idx} className="group block h-full">
-              <div className="bg-[#f8fafc] rounded-3xl overflow-hidden border border-gray-100 shadow-sm group-hover:shadow-xl transition-all duration-300 h-full flex flex-col">
-                <div className="relative w-full aspect-[4/3] sm:aspect-[16/9] md:aspect-[4/3]">
-                  <Image 
-                    src={svc.img} 
-                    alt={svc.title} 
-                    fill 
-                    className="object-cover group-hover:scale-105 transition-transform duration-500" 
-                  />
-                </div>
-                <div className="p-6 sm:p-8 lg:p-10 flex-grow flex flex-col justify-center bg-white border-t border-gray-100">
-                  <h3 className="text-[20px] sm:text-[22px] font-bold text-[#0f172a] mb-3 group-hover:text-[#ff8c00] transition-colors">
-                    {svc.title}
-                  </h3>
-                  <p className="text-gray-600 text-[15px] sm:text-[16px] leading-relaxed">
-                    {svc.desc}
-                  </p>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+          {services.map((service, index) => (
+            <div key={index} className="group flex flex-col bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
+              {/* Image Placeholder */}
+              <div className="w-full aspect-[4/3] bg-gray-200 relative overflow-hidden flex items-center justify-center border-b border-gray-100">
+                <div className="absolute inset-0 bg-brand-primary/10 group-hover:bg-transparent transition-colors z-10"></div>
+                <span className="text-gray-400 font-bold relative z-0">Image {index + 1}</span>
+                
+                {/* Floating Title on Image (Optional based on design, but it looks like the title is also inside the image in the screenshot as a dark overlay badge) */}
+                <div className="absolute inset-0 flex items-center justify-center z-20">
+                   <div className="bg-brand-primary/80 backdrop-blur-sm text-white px-6 py-2 rounded font-bold text-sm">
+                     {service.title}
+                   </div>
                 </div>
               </div>
-            </Link>
+              
+              {/* Content Block */}
+              <div className="p-6 lg:p-8 flex-grow border-l-4 border-transparent group-hover:border-brand-primary transition-colors relative">
+                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-brand-primary transition-colors">
+                  {service.title}
+                </h3>
+                <p className="text-gray-500 text-sm font-medium leading-relaxed">
+                  {service.description}
+                </p>
+              </div>
+            </div>
           ))}
+        </div>
+
+        {/* CTA */}
+        <div className="mt-16 lg:mt-20 flex justify-center">
+          <button className="inline-flex items-center gap-2 bg-brand-secondary hover:bg-yellow-300 text-[#111827] px-8 py-3.5 rounded-full font-bold transition-all shadow-md">
+            <div className="bg-white rounded-full p-1">
+              <ArrowRight className="w-4 h-4 text-[#111827]" />
+            </div>
+            View All Services
+          </button>
         </div>
 
       </div>

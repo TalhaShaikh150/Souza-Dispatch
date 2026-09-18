@@ -1,98 +1,48 @@
-import Image from 'next/image';
+"use client";
 
-const galleryImages = [
-  {
-    src: "/assets/house_removals_stock.jpg",
-    alt: "Team loading moving van",
-    aspect: "aspect-[4/3]"
-  },
-  {
-    src: "/assets/furniture_transport_stock.jpg",
-    alt: "Wrapping fragile furniture",
-    aspect: "aspect-square"
-  },
-  {
-    src: "/assets/man_and_van_stock.jpg",
-    alt: "Friendly mover holding boxes",
-    aspect: "aspect-[3/4]"
-  },
-  {
-    src: "/assets/hero.jpg",
-    alt: "Team standing by the van",
-    aspect: "aspect-[16/9]"
-  },
-  {
-    src: "/assets/long_distance_stock.jpg",
-    alt: "Moving boxes being loaded",
-    aspect: "aspect-[3/2]"
-  }
-];
+import Image from "next/image";
+import { Image as ImageIcon } from "lucide-react";
 
 export default function GallerySection() {
+  const images = [
+    { title: "At your service", span: "col-span-12 sm:col-span-6 lg:col-span-4" },
+    { title: "Team at work", span: "col-span-12 sm:col-span-6 lg:col-span-4" },
+    { title: "Safe transport", span: "col-span-12 lg:col-span-4" },
+  ];
+
   return (
-    <section className="py-24 lg:py-32 bg-slate-50 border-t border-gray-200">
+    <section className="py-24 lg:py-32 bg-[#f9fafb]">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div className="text-center mb-16">
-          <span className="text-[#00ace0] font-bold text-[13px] tracking-wider uppercase mb-3 block">
-            Our Gallery
-          </span>
-          <h2 className="text-[36px] sm:text-[42px] lg:text-[48px] font-black text-[#0f172a] leading-[1.1]">
-            See Our Team at <span className="text-[#00ace0]">Work</span>
+        {/* Header */}
+        <div className="text-center max-w-2xl mx-auto mb-16 lg:mb-20">
+          <div className="inline-flex items-center gap-2 bg-white rounded-full py-1.5 px-4 mb-6 shadow-sm border border-gray-100">
+            <div className="bg-gray-100 rounded-full p-1 shadow-sm">
+              <ImageIcon className="w-3 h-3 text-brand-primary" />
+            </div>
+            <span className="text-[13px] font-bold text-gray-700">Our Gallery</span>
+          </div>
+          
+          <h2 className="text-[36px] sm:text-[42px] lg:text-[48px] font-extrabold text-gray-900 leading-[1.15] tracking-tight">
+            See Our <span className="text-brand-primary relative inline-block">
+              Team
+              <svg className="absolute w-full h-3 -bottom-1 left-0 text-brand-primary" viewBox="0 0 200 20" fill="none" preserveAspectRatio="none">
+                <path d="M5 15Q100 0 195 15" stroke="currentColor" strokeWidth="4" strokeLinecap="round" />
+              </svg>
+            </span> At Work
           </h2>
         </div>
 
-        {/* CSS Grid Masonry approximation */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 auto-rows-[250px]">
-          
-          {/* Large Featured Image */}
-          <div className="sm:col-span-2 sm:row-span-2 relative rounded-3xl overflow-hidden shadow-md group">
-            <Image 
-              src={galleryImages[0].src}
-              alt={galleryImages[0].alt}
-              fill
-              className="object-cover transition-transform duration-700 group-hover:scale-105"
-            />
-            <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500"></div>
-          </div>
-          
-          {/* Small Grid Items */}
-          <div className="relative rounded-3xl overflow-hidden shadow-md group">
-            <Image 
-              src={galleryImages[1].src}
-              alt={galleryImages[1].alt}
-              fill
-              className="object-cover transition-transform duration-700 group-hover:scale-105"
-            />
-          </div>
-          
-          <div className="relative rounded-3xl overflow-hidden shadow-md group sm:row-span-2">
-            <Image 
-              src={galleryImages[2].src}
-              alt={galleryImages[2].alt}
-              fill
-              className="object-cover transition-transform duration-700 group-hover:scale-105"
-            />
-          </div>
-          
-          <div className="sm:col-span-2 relative rounded-3xl overflow-hidden shadow-md group">
-            <Image 
-              src={galleryImages[3].src}
-              alt={galleryImages[3].alt}
-              fill
-              className="object-cover transition-transform duration-700 group-hover:scale-105 object-center"
-            />
-          </div>
-          
-          <div className="relative rounded-3xl overflow-hidden shadow-md group">
-            <Image 
-              src={galleryImages[4].src}
-              alt={galleryImages[4].alt}
-              fill
-              className="object-cover transition-transform duration-700 group-hover:scale-105"
-            />
-          </div>
-
+        {/* Gallery Grid */}
+        <div className="grid grid-cols-12 gap-4 lg:gap-6">
+          {images.map((img, i) => (
+            <div key={i} className={`${img.span} relative rounded-2xl overflow-hidden aspect-video bg-gray-200 group`}>
+              <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors z-10"></div>
+              <div className="w-full h-full flex items-center justify-center font-bold text-gray-500">
+                Gallery Image {i + 1}
+              </div>
+            </div>
+          ))}
         </div>
 
       </div>

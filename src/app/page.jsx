@@ -1,21 +1,18 @@
 import Hero from '@/components/Hero';
-import TrustBar from '@/components/TrustBar';
+import AboutSection from '@/components/AboutSection';
 import ServicesSection from '@/components/ServicesSection';
-import TeamSection from '@/components/TeamSection';
 import ProcessSection from '@/components/ProcessSection';
-import Testimonials from '@/components/Testimonials';
-import CtaSection from '@/components/CtaSection';
+import GallerySection from '@/components/GallerySection';
 
 export default function Home() {
   return (
     <>
       <Hero />
-      <TrustBar />
+      <AboutSection />
       <ServicesSection />
-      <TeamSection />
       <ProcessSection />
-      <Testimonials />
-      <CtaSection />
+      <GallerySection />
     </>
   );
 }
+

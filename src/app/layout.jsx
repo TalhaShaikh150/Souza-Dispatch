@@ -1,71 +1,47 @@
-import { Poppins, Inter } from "next/font/google";
+import { Nunito } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import ColorSelector from "@/components/ColorSelector";
 
-const poppins = Poppins({
+const nunito = Nunito({
   subsets: ["latin"],
   variable: "--font-primary",
-  weight: ["400", "500", "600", "700"],
-});
-
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-heading",
-});
-
-import { Plus_Jakarta_Sans } from "next/font/google";
-const plusJakarta = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  variable: "--font-heading-alt",
-  weight: ["700", "800"],
 });
 
 export const metadata = {
-  title: "SouzaDispatch | Professional Moving Services in London",
-  description: "Compassionate, family-run moving services across London and the UK.",
+  title: "SouzaDispatch",
+  description: "Your reliable moving partner.",
 };
+
+const themeScript = `
+  (function() {
+    try {
+      var primary = localStorage.getItem('brand-primary');
+      var secondary = localStorage.getItem('brand-secondary');
+      if (primary) document.documentElement.style.setProperty('--color-primary', primary);
+      if (secondary) document.documentElement.style.setProperty('--color-secondary', secondary);
+    } catch (e) {}
+  })();
+`;
 
 export default function RootLayout({
   children,
 }) {
   return (
-    <html lang="en" className={`${poppins.variable} ${inter.variable} ${plusJakarta.variable} overflow-x-hidden`}>
-      <body className={`${poppins.className} antialiased text-brand-dark bg-brand-white relative min-h-screen overflow-x-hidden`}>
+    <html lang="en" className={`${nunito.variable} overflow-x-hidden`} suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+      </head>
+      <body className="antialiased text-gray-900 bg-[#f9fafb] relative min-h-screen overflow-x-hidden flex flex-col" style={{ fontFamily: "var(--font-primary, 'Nunito', sans-serif)" }}>
         <Header />
         
-        {/* LocalBusiness Schema for Google Business Profile Optimization */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "MovingCompany",
-              "name": "SouzaDispatch",
-              "image": "https://www.souzadispatch.co.uk/assets/logo.png",
-              "@id": "https://www.souzadispatch.co.uk",
-              "url": "https://www.souzadispatch.co.uk",
-              "telephone": "07862036671",
-              "address": {
-                "@type": "PostalAddress",
-                "addressLocality": "London",
-                "addressCountry": "UK"
-              },
-              "areaServed": "London",
-              "sameAs": [
-                "https://www.facebook.com/profile.php?id=61584689547300",
-                "https://www.instagram.com/souzadispatch/",
-                "https://www.linkedin.com/company/souzadispatch"
-              ]
-            })
-          }}
-        />
-
         <main id="main-content" className="w-full overflow-x-hidden flex-grow">
           {children}
         </main>
 
         <Footer />
+        <ColorSelector />
       </body>
     </html>
   );

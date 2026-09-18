@@ -1,77 +1,84 @@
-import Image from 'next/image';
-import Link from 'next/link';
+"use client";
+
+import Image from "next/image";
+import { ArrowRight, Info } from "lucide-react";
 
 export default function AboutSection() {
   return (
-    <section className="py-24 lg:py-32 bg-white overflow-hidden">
+    <section className="py-24 lg:py-32 bg-white overflow-hidden mt-20 lg:mt-32">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
-        
-        <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
+        <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
           
-          {/* Left Side: Images & Badge */}
-          <div className="w-full lg:w-1/2 relative">
-            <h2 className="text-[32px] sm:text-[40px] font-black text-[#0f172a] mb-10 lg:hidden">
-              About <span className="text-[#00ace0]">SouzaDispatch</span> Removals
-            </h2>
+          {/* Left Side - Image Composition */}
+          <div className="relative">
+            {/* Main large image placeholder */}
+            <div className="relative z-10 rounded-[30px] overflow-hidden w-[90%] aspect-[4/5] bg-gray-200 border-8 border-white shadow-xl flex items-center justify-center">
+              <span className="text-gray-400 font-bold text-xl">Image Placeholder 1</span>
+            </div>
             
-            <div className="relative w-[85%] max-w-[500px]">
-              {/* Main Image */}
-              <div className="relative aspect-[3/4] rounded-3xl overflow-hidden shadow-2xl">
-                <Image 
-                  src="/assets/house_removals_stock.jpg" 
-                  alt="Professional Movers in London"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                />
+            {/* Secondary small image placeholder overlapping */}
+            <div className="absolute -bottom-8 right-0 z-20 w-[55%] aspect-square rounded-[30px] overflow-hidden bg-gray-300 border-8 border-white shadow-2xl flex items-center justify-center">
+              <span className="text-gray-500 font-bold">Image 2</span>
+            </div>
+            
+            {/* Decorative background element */}
+            <div className="absolute top-1/2 -left-8 -translate-y-1/2 w-32 h-32 bg-green-50 rounded-full z-0"></div>
+          </div>
+
+          {/* Right Side - Content */}
+          <div className="relative z-10 pt-8 lg:pt-0">
+            {/* Pill Badge */}
+            <div className="inline-flex items-center gap-2 bg-gray-100 rounded-full py-1.5 px-4 mb-6">
+              <div className="bg-white rounded-full p-1 shadow-sm">
+                <Info className="w-3 h-3 text-brand-primary" />
+              </div>
+              <span className="text-[13px] font-bold text-gray-700">About SouzaDispatch</span>
+            </div>
+            
+            {/* Title */}
+            <h2 className="text-[36px] sm:text-[42px] lg:text-[48px] font-extrabold text-gray-900 leading-[1.15] mb-6 tracking-tight">
+              Your Trusted Partner In Safe & Stress-Free <span className="text-brand-primary relative inline-block">
+                Moving
+                <svg className="absolute w-full h-3 -bottom-1 left-0 text-brand-primary" viewBox="0 0 200 20" fill="none" preserveAspectRatio="none">
+                  <path d="M5 15Q100 0 195 15" stroke="currentColor" strokeWidth="4" strokeLinecap="round" />
+                </svg>
+              </span>
+            </h2>
+
+            {/* Description */}
+            <p className="text-gray-600 text-lg mb-10 leading-relaxed font-medium">
+              Choose a moving company that puts your needs first. At SouzaDispatch, we provide reliable and professional moving services designed to make your relocation simple and worry-free.
+            </p>
+
+            {/* Bottom Content Block */}
+            <div className="flex flex-col sm:flex-row items-center gap-8 border-t border-gray-100 pt-8">
+              
+              {/* Stat */}
+              <div className="flex-shrink-0 text-center sm:text-left">
+                <div className="text-[54px] font-black text-gray-900 leading-none tracking-tighter flex items-start justify-center sm:justify-start">
+                  05<span className="text-2xl mt-2 ml-0.5 text-gray-400">+</span>
+                </div>
+                <div className="text-[13px] font-bold text-gray-500 uppercase tracking-wide mt-1">
+                  Years of work<br/>experience
+                </div>
+              </div>
+
+              {/* Text & Button */}
+              <div className="flex-1 text-center sm:text-left border-l-0 sm:border-l sm:border-gray-100 sm:pl-8">
+                <p className="text-gray-600 font-medium text-sm leading-relaxed mb-5">
+                  Our team works closely with you to plan every detail, solutions to fit your moving needs.
+                </p>
+                <button className="inline-flex items-center gap-2 bg-brand-secondary hover:bg-yellow-300 text-[#111827] px-6 py-2.5 rounded-full font-bold transition-all shadow-md">
+                  <div className="bg-white rounded-full p-1">
+                    <ArrowRight className="w-3 h-3 text-[#111827]" />
+                  </div>
+                  Get Started Now
+                </button>
               </div>
               
-              {/* Secondary Overlapping Image */}
-              <div className="absolute -bottom-10 -right-12 w-[65%] aspect-square rounded-3xl overflow-hidden shadow-2xl border-8 border-white">
-                <Image 
-                  src="/assets/furniture_transport_stock.jpg" 
-                  alt="Furniture Wrapping"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 50vw, 30vw"
-                />
-              </div>
-
-              {/* Circular Badge */}
-              <div className="absolute top-10 -right-8 w-32 h-32 bg-[#0f172a] text-white rounded-full flex flex-col items-center justify-center p-4 shadow-xl border-4 border-white rotate-12 hover:rotate-0 transition-transform duration-500">
-                <span className="text-[12px] font-bold uppercase tracking-widest text-[#00ace0] mb-1">Family</span>
-                <span className="text-[20px] font-black leading-none">RUN</span>
-                <span className="text-[10px] uppercase tracking-widest mt-1 opacity-80">Since 2018</span>
-              </div>
             </div>
           </div>
-          
-          {/* Right Side: Text & Content */}
-          <div className="w-full lg:w-1/2 mt-16 lg:mt-0">
-            <h2 className="hidden lg:block text-[42px] xl:text-[52px] font-black text-[#0f172a] mb-8 leading-[1.1]">
-              About <span className="text-[#00ace0]">SouzaDispatch</span> Removals
-            </h2>
-            
-            <div className="text-[16px] lg:text-[18px] text-gray-600 space-y-6 leading-relaxed mb-10">
-              <p>
-                SouzaDispatch is dedicated to making every move simple, safe, and stress-free. As a family-run removal company in London, we treat every single home and item with the same level of care as if it were our own.
-              </p>
-              <p>
-                With years of experience in residential and commercial relocation across the UK, our skilled team handles every detail with care and precision. From packing fragile antiques to transporting heavy furniture, we focus on delivering reliable service you can trust, ensuring your belongings arrive on time and in perfect condition.
-              </p>
-            </div>
-
-            <Link 
-              href="/about" 
-              className="inline-flex items-center gap-2 px-8 py-4 bg-[#00ace0] text-white text-[16px] font-bold rounded-full shadow-lg hover:bg-[#0095c2] hover:scale-105 transition-all focus:outline-none"
-            >
-              Learn More About Us
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
-            </Link>
-          </div>
-
         </div>
-        
       </div>
     </section>
   );
