@@ -12,20 +12,29 @@
   --shadow-card: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
   --shadow-btn: 0 4px 6px -1px rgba(250, 204, 21, 0.4), 0 2px 4px -1px rgba(250, 204, 21, 0.2);
 
-  --font-primary: var(--font-primary), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-heading: var(--font-primary);
-  --font-heading-alt: var(--font-primary);
+  --font-sans: var(--font-plus-jakarta);
+  --font-heading: var(--font-plus-jakarta);
+  --font-button: var(--font-plus-jakarta);
 }
 
 @layer base {
   :root {
-    --color-primary: #166534;
-    --color-secondary: #facc15;
+    --color-primary: #3B82F6; /* Tech Blue */
+    --color-secondary: #EFF6FF; /* Very light blue */
   }
   
   body {
     background-color: var(--color-surface-strong);
     color: var(--color-text-primary);
+    font-family: var(--font-sans);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+  
+  button, .btn-font {
+    font-family: var(--font-button);
   }
   
   *:focus-visible { 

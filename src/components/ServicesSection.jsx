@@ -1,97 +1,97 @@
 "use client";
 
-import Image from "next/image";
-import { ArrowRight, Settings } from "lucide-react";
+import { ArrowRight, Home, Briefcase, Package, GraduationCap } from "lucide-react";
 
 export default function ServicesSection() {
   const services = [
     {
-      title: "Residential Moving",
-      description: "Safe and smooth home relocation handled with care from start to finish.",
+      title: "Home & flat moves",
+      description: "Studios to four-beds. Stairs, tight corners and awkward London parking included.",
+      image: "/images/service-1.jpg",
+      icon: <Home className="w-6 h-6 text-brand-primary" />
     },
     {
-      title: "Commercial Moving",
-      description: "Efficient business and office moving with minimal downtime and disruption.",
+      title: "Office & business moves",
+      description: "Out of hours and weekends so your team walks into a working office on Monday.",
+      image: "/images/service-2.jpg",
+      icon: <Briefcase className="w-6 h-6 text-brand-primary" />
     },
     {
-      title: "Packing Services",
-      description: "Professional packing to protect your belongings during every step of the move.",
+      title: "Souza Dispatch Pack and move",
+      description: "We bring the boxes, tape and blankets, pack the house and unpack at the other end.",
+      image: "/images/service-3.jpg",
+      icon: <Package className="w-6 h-6 text-brand-primary" />
     },
     {
-      title: "Long-Distance Moving",
-      description: "Reliable and secure moving services across cities and long distances.",
-    },
-    {
-      title: "Furniture Moving",
-      description: "Careful handling and transport of heavy and valuable furniture items.",
-    },
-    {
-      title: "Loading & Unloading",
-      description: "Fast and safe loading and unloading to save your time and effort.",
+      title: "Student moves",
+      description: "Halls, house shares and single-item runs, priced for a student budget.",
+      image: "/images/service-4.jpg",
+      icon: <GraduationCap className="w-6 h-6 text-brand-primary" />
     }
   ];
 
   return (
-    <section className="py-24 lg:py-32 bg-[#f9fafb]">
+    <section className="py-8 lg:py-10 bg-white">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
-        <div className="text-center max-w-2xl mx-auto mb-16 lg:mb-20">
-          <div className="inline-flex items-center gap-2 bg-white rounded-full py-1.5 px-4 mb-6 shadow-sm border border-gray-100">
-            <div className="bg-gray-100 rounded-full p-1 shadow-sm">
-              <Settings className="w-3 h-3 text-brand-primary" />
-            </div>
-            <span className="text-[13px] font-bold text-gray-700">Our Service</span>
-          </div>
-          
-          <h2 className="text-[36px] sm:text-[42px] lg:text-[48px] font-extrabold text-gray-900 leading-[1.15] tracking-tight">
-            Our Moving <span className="text-brand-primary relative inline-block">
-              Services
-              <svg className="absolute w-full h-3 -bottom-1 left-0 text-brand-primary" viewBox="0 0 200 20" fill="none" preserveAspectRatio="none">
-                <path d="M5 15Q100 0 195 15" stroke="currentColor" strokeWidth="4" strokeLinecap="round" />
-              </svg>
-            </span>
+        <div className="text-center max-w-2xl mx-auto mb-8 lg:mb-10">
+          <span className="text-[13px] font-bold text-brand-primary uppercase tracking-widest block mb-3">
+            Our Services
+          </span>
+          <h2 className="text-[36px] sm:text-[42px] lg:text-[48px] font-extrabold text-[#0a192f] leading-[1.15] tracking-tight">
+            A wide range of services
           </h2>
+          <p className="mt-4 text-gray-500 font-medium">
+            We provide everything you need for a smooth and stress-free move.
+          </p>
         </div>
 
         {/* Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
           {services.map((service, index) => (
-            <div key={index} className="group flex flex-col bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
-              {/* Image Placeholder */}
-              <div className="w-full aspect-[4/3] bg-gray-200 relative overflow-hidden flex items-center justify-center border-b border-gray-100">
-                <div className="absolute inset-0 bg-brand-primary/10 group-hover:bg-transparent transition-colors z-10"></div>
-                <span className="text-gray-400 font-bold relative z-0">Image {index + 1}</span>
-                
-                {/* Floating Title on Image (Optional based on design, but it looks like the title is also inside the image in the screenshot as a dark overlay badge) */}
-                <div className="absolute inset-0 flex items-center justify-center z-20">
-                   <div className="bg-brand-primary/80 backdrop-blur-sm text-white px-6 py-2 rounded font-bold text-sm">
-                     {service.title}
-                   </div>
+            <div key={index} className="flex flex-col bg-white rounded-2xl border border-gray-100 shadow-[0_2px_12px_rgba(0,0,0,0.04)] overflow-hidden relative group transition-all duration-300 hover:shadow-[0_8px_24px_rgba(0,0,0,0.08)] hover:-translate-y-1">
+              
+              {/* Image */}
+              <div className="w-full aspect-[4/3] relative overflow-hidden">
+                <img 
+                  src={service.image} 
+                  alt={service.title}
+                  className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                />
+              </div>
+              
+              {/* Floating Icon */}
+              <div className="absolute top-[calc(42.5%-10px)] sm:top-[calc(45%-10px)] left-1/2 -translate-x-1/2 w-14 h-14 rounded-full bg-white border-4 border-white shadow-sm flex items-center justify-center z-10">
+                <div className="w-full h-full rounded-full bg-blue-50 flex items-center justify-center">
+                  {service.icon}
                 </div>
               </div>
               
               {/* Content Block */}
-              <div className="p-6 lg:p-8 flex-grow border-l-4 border-transparent group-hover:border-brand-primary transition-colors relative">
-                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-brand-primary transition-colors">
+              <div className="pt-12 pb-8 px-6 flex-grow flex flex-col items-center text-center">
+                <h3 className="text-[18px] font-extrabold text-[#0a192f] mb-3 leading-tight group-hover:text-brand-primary transition-colors">
                   {service.title}
                 </h3>
-                <p className="text-gray-500 text-sm font-medium leading-relaxed">
+                <p className="text-gray-500 text-[14px] font-medium leading-relaxed mb-6">
                   {service.description}
                 </p>
+                
+                <div className="mt-auto">
+                  <a href={`/services#service-${index}`} className="text-brand-primary font-bold text-[14px] hover:text-brand-primary/80 transition-colors">
+                    View service
+                  </a>
+                </div>
               </div>
             </div>
           ))}
         </div>
 
-        {/* CTA */}
-        <div className="mt-16 lg:mt-20 flex justify-center">
-          <button className="inline-flex items-center gap-2 bg-brand-secondary hover:bg-yellow-300 text-[#111827] px-8 py-3.5 rounded-full font-bold transition-all shadow-md">
-            <div className="bg-white rounded-full p-1">
-              <ArrowRight className="w-4 h-4 text-[#111827]" />
-            </div>
-            View All Services
-          </button>
+        {/* Bottom CTA */}
+        <div className="mt-10 flex justify-center">
+          <a href="/services" className="bg-[#3B82F6] hover:bg-[#2563EB] text-white px-8 py-3.5 rounded font-bold transition-colors text-[15px] shadow-sm">
+            Browse our services
+          </a>
         </div>
 
       </div>

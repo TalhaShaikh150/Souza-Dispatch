@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { Palette, X, RotateCcw } from "lucide-react";
 
 const PRESETS = [
+  { name: "Client Selected (Deep Blue/Cyan)", primary: "#102457", secondary: "#21a1de" },
   { name: "Original Green/Yellow", primary: "#166534", secondary: "#facc15" },
   { name: "Corporate Navy/Teal", primary: "#1e3a8a", secondary: "#2dd4bf" },
   { name: "Ocean Blue/Coral", primary: "#0ea5e9", secondary: "#f43f5e" },
@@ -28,8 +29,8 @@ const PRESETS = [
 
 export default function ColorSelector() {
   const [isOpen, setIsOpen] = useState(false);
-  const [primary, setPrimary] = useState("#166534");
-  const [secondary, setSecondary] = useState("#facc15");
+  const [primary, setPrimary] = useState("#102457");
+  const [secondary, setSecondary] = useState("#21a1de");
 
   useEffect(() => {
     // Load saved colors on mount
@@ -51,8 +52,8 @@ export default function ColorSelector() {
   }, [primary, secondary]);
 
   const resetToDefault = () => {
-    setPrimary("#166534");
-    setSecondary("#facc15");
+    setPrimary("#102457");
+    setSecondary("#21a1de");
   };
 
   return (

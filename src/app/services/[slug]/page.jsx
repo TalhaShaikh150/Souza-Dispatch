@@ -122,7 +122,7 @@ export default function ServicePage({ params }) {
                 <Link href="/contact" className="px-8 py-4 bg-[#00ace0] text-white text-[16px] font-bold rounded-lg shadow-sm hover:bg-[#0095c2] transition-colors inline-flex justify-center items-center">
                   Request a Free Quote
                 </Link>
-                <a href="https://wa.me/447862036671" className="px-8 py-4 bg-brand-green text-white text-[16px] font-bold rounded-lg shadow-sm hover:bg-brand-greenLight transition-colors inline-flex justify-center items-center">
+                <a href="https://wa.me/442081914510" className="px-8 py-4 bg-brand-green text-white text-[16px] font-bold rounded-lg shadow-sm hover:bg-brand-greenLight transition-colors inline-flex justify-center items-center">
                   Chat on WhatsApp
                 </a>
               </div>

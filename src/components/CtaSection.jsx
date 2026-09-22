@@ -26,7 +26,7 @@ export default function CtaSection() {
             </a>
             
             <a 
-              href="https://wa.me/447862036671" 
+              href="https://wa.me/442081914510" 
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white hover:bg-gray-50 text-[#0f172a] px-8 py-4 rounded-full font-bold text-[16px] shadow-sm hover:shadow-md transition-all"

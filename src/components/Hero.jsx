@@ -2,15 +2,15 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import { CheckCircle2, Phone, Play, ArrowRight, Truck, MapPin } from "lucide-react";
+import { CheckCircle2, Phone, Play, ArrowRight, Truck, MapPin, Star } from "lucide-react";
 
 export default function Hero() {
   const [currentSlide, setCurrentSlide] = useState(0);
   
   const slides = [
-    "/assets/hero-slide-1.jpg",
-    "/assets/hero-slide-2.jpg",
-    "/assets/hero-slide-3.jpg",
+    "/images/hero-slide-1.jpg",
+    "/images/hero-slide-2.jpg",
+    "/images/hero-slide-3.jpg",
   ];
 
   useEffect(() => {
@@ -21,155 +21,124 @@ export default function Hero() {
   }, [slides.length]);
 
   return (
-    <section className="relative pt-20 pb-4 lg:pt-20 lg:pb-12 xl:pt-24 xl:pb-16 2xl:pt-40 2xl:pb-32 bg-[#f9fafb] overflow-visible">
-      {/* Green Right Background Shape (Hidden on mobile for clean white background) */}
-      <div className="hidden lg:block absolute top-0 right-0 w-[50%] h-[100%] bg-brand-primary rounded-bl-[80px] z-0"></div>
-
-      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section className="relative pt-20 lg:pt-24 bg-[#f9fafb] overflow-visible">
+      {/* Background shape removed for cleaner editorial look */}
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pb-12 lg:pb-24">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-6 2xl:gap-8 items-center">
           
           {/* Left Content */}
-          <div className="pt-4 lg:pt-8 2xl:pt-12">
-            {/* Pill Badge */}
-            <div className="inline-flex items-center gap-2 bg-gray-200 rounded-full py-1.5 px-4 mb-4 2xl:mb-6 shadow-sm">
-              <div className="bg-white rounded-full p-1 shadow-sm">
-                <Truck className="w-3 h-3 text-brand-primary" />
-              </div>
-              <span className="text-[13px] font-bold text-gray-700">Your Reliable Moving Partner</span>
+          <div className="pt-0 lg:pt-2">
+            {/* Eyebrow */}
+            <div className="inline-flex items-center gap-3 mb-3 lg:mb-5 border-l-4 border-brand-primary pl-4">
+              <span className="text-[13px] font-extrabold text-[#0a192f] uppercase tracking-[0.15em]">
+                North London <span className="text-gray-300 mx-1">|</span> 7 days a week
+              </span>
             </div>
             
             {/* Title */}
-            <h1 className="text-4xl sm:text-5xl lg:text-[46px] xl:text-[54px] 2xl:text-[64px] font-extrabold leading-[1.1] text-gray-900 mb-4 2xl:mb-6 tracking-tight">
-              Move Smart.<br/>
-              Move Safe. Move<br/>
-              with <span className="text-brand-primary relative inline-block">
-                SouzaDispatch.
+            <h1 className="text-[40px] sm:text-5xl lg:text-[52px] xl:text-[56px] 2xl:text-[60px] font-extrabold leading-[1.1] text-gray-900 mb-4 2xl:mb-6 tracking-tight">
+              The Easy Way<br/>
+              of <span className="text-brand-primary relative inline-block">
+                Moving.
                 <svg className="absolute w-full h-3 -bottom-1 left-0 text-brand-primary" viewBox="0 0 200 20" fill="none" preserveAspectRatio="none">
                   <path d="M5 15Q100 0 195 15" stroke="currentColor" strokeWidth="4" strokeLinecap="round" />
                 </svg>
               </span>
             </h1>
 
-            <p className="text-gray-600 text-base lg:text-lg mb-6 2xl:mb-8 max-w-md font-medium leading-relaxed">
-              Reliable, fast, and affordable moving services you can trust. We handle your move with care from start to finish.
+            {/* Description */}
+            <p className="mt-4 lg:mt-5 text-[16px] sm:text-[18px] lg:text-[19px] text-gray-600 font-medium leading-relaxed max-w-[500px]">
+              A family-run removals firm in North London. Send us a sixty-second video of your rooms and we will send back a fixed price. No surveys to book, no hidden fees on the day.
             </p>
 
-            {/* Buttons */}
-            <div className="flex flex-wrap items-center gap-4 lg:gap-6">
-              <a href="tel:2676405946" className="flex items-center gap-2 bg-brand-primary hover:bg-green-800 text-white px-5 py-3 lg:px-6 lg:py-3.5 rounded-full font-bold transition-colors shadow-md text-sm lg:text-base">
-                <div className="bg-white rounded-full p-1">
-                  <Phone className="w-3 h-3 lg:w-4 lg:h-4 text-brand-primary fill-current" />
-                </div>
-                (267) 640 5946
+            {/* CTAs */}
+            <div className="flex flex-col sm:flex-row gap-4 mt-5 lg:mt-6">
+              <a href="tel:02081914510" className="w-full sm:w-auto bg-[#0a192f] hover:bg-black text-white px-8 py-4 font-bold transition-colors flex items-center justify-center gap-3 text-[15px]">
+                <Phone className="w-4 h-4 text-white" />
+                020 8191 4510
               </a>
-              
-              <button className="flex items-center gap-2 lg:gap-3 text-gray-900 font-bold hover:text-brand-primary transition-colors group text-sm lg:text-base">
-                <div className="bg-brand-secondary rounded-full p-2.5 lg:p-3 flex items-center justify-center shadow-md group-hover:scale-105 transition-transform">
-                  <Play className="w-3 h-3 lg:w-4 lg:h-4 text-[#111827] fill-current" />
-                </div>
-                Watch Video
-              </button>
+              <a href="https://wa.me/442081914510" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto bg-[#25D366] hover:bg-[#128C7E] text-white px-8 py-4 font-bold transition-colors flex items-center justify-center gap-3 text-[15px]">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="w-5 h-5 fill-current">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
+                </svg>
+                WhatsApp a video
+              </a>
             </div>
           </div>
 
-          {/* Right Content - Image */}
-          <div className="relative flex justify-center lg:justify-end mt-8 lg:mt-0">
-            {/* Sparkles Decoration */}
-            <div className="absolute top-0 right-1/4 text-white/50 z-0">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1">
-                <path d="M12 2L15 9L22 12L15 15L12 22L9 15L2 12L9 9L12 2Z" />
-              </svg>
-            </div>
-
-            {/* Yellow Circle */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[240px] sm:w-[300px] lg:w-[380px] 2xl:w-[480px] h-[240px] sm:h-[300px] lg:h-[380px] 2xl:h-[480px] bg-brand-secondary rounded-full z-0 shadow-xl"></div>
+          {/* Right Content */}
+          <div className="relative mt-8 lg:mt-0 w-full max-w-[500px] h-[350px] sm:h-[420px] lg:h-[380px] xl:h-[480px] mx-auto lg:ml-auto lg:mr-0">
             
-            {/* Main Image Slider */}
-            <div className="relative z-10 h-[300px] lg:h-[360px] xl:h-[420px] 2xl:h-[600px] w-full max-w-[460px] 2xl:max-w-[500px] flex items-end justify-center">
-              <div className="w-full h-[90%] bg-gray-200 rounded-[24px] border-[6px] border-white shadow-2xl relative overflow-hidden group">
-                 {slides.map((slide, idx) => (
-                   <img 
-                     key={idx}
-                     src={slide}
-                     alt={`Moving service ${idx + 1}`}
-                     className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${currentSlide === idx ? 'opacity-100' : 'opacity-0'}`}
-                   />
-                 ))}
-                 
-                 {/* Slider Indicators */}
-                 <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5 z-20">
-                   {slides.map((_, idx) => (
-                     <button 
-                       key={idx}
-                       onClick={() => setCurrentSlide(idx)}
-                       className={`w-2 h-2 rounded-full transition-all ${currentSlide === idx ? 'bg-white scale-125' : 'bg-white/50 hover:bg-white/80'}`}
-                     />
-                   ))}
-                 </div>
-              </div>
-            </div>
+            {/* Structured background offset for editorial look */}
+            <div className="hidden lg:block absolute top-4 -right-4 w-full h-full bg-[#0a192f] opacity-5"></div>
             
-            {/* Floating quote badge */}
-            <div className="absolute right-0 lg:-right-4 top-[70%] bg-white p-4 rounded-xl shadow-2xl z-20 max-w-[200px]">
-               <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-brand-secondary text-[#111827] font-bold rounded-full w-8 h-8 flex items-center justify-center text-base shadow-md border-2 border-white">
-                 "
-               </div>
-               <p className="text-[12px] lg:text-[13px] font-medium text-gray-700 text-center italic mt-2">
-                 "Our job is to make it smooth, simple, and worry-free for you."
-               </p>
+            <div className="absolute inset-0 w-full h-full bg-gray-100 overflow-hidden shadow-2xl">
+              {slides.map((slide, idx) => (
+                <img key={`main-${idx}`} src={slide} alt="Moving slide" className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${currentSlide === idx ? 'opacity-100 z-10' : 'opacity-0 z-0'}`} />
+              ))}
             </div>
           </div>
+
         </div>
-        
-        {/* Floating Quote Form */}
-        <div className="mt-4 lg:mt-6 xl:mt-8 2xl:mt-24 bg-white rounded-2xl shadow-2xl p-5 lg:p-6 relative z-20 border border-gray-100 -mb-24 lg:-mb-32 max-w-[1200px] mx-auto">
-           {/* Form Header */}
-           <div className="flex flex-col md:flex-row items-center justify-between mb-6 gap-4 pb-4 border-b border-gray-100">
-             <h3 className="text-[20px] font-bold text-gray-900">Get a Free Moving Quote</h3>
-             <div className="flex flex-wrap justify-center gap-4 lg:gap-6 text-[13px] font-bold text-gray-600">
-               <span className="flex items-center gap-1.5"><CheckCircle2 className="w-4 h-4 text-brand-primary fill-brand-primary/10" /> Professional Movers</span>
-               <span className="flex items-center gap-1.5"><CheckCircle2 className="w-4 h-4 text-brand-primary fill-brand-primary/10" /> On-Time Delivery</span>
-               <span className="flex items-center gap-1.5"><CheckCircle2 className="w-4 h-4 text-brand-primary fill-brand-primary/10" /> No Hidden Fees</span>
-             </div>
-           </div>
-           
-           {/* Inputs */}
-           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
-             <div className="relative">
-               <div className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400">
-                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-               </div>
-               <input placeholder="Full Name" className="w-full bg-gray-50 border border-gray-200 rounded-full pl-11 pr-4 py-3.5 text-sm font-medium focus:outline-none focus:border-brand-primary focus:ring-1 focus:ring-brand-primary transition-all" />
-             </div>
-             
-             <div className="relative">
-               <div className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400">
-                 <Phone className="w-[18px] h-[18px]" />
-               </div>
-               <input placeholder="Phone Number" className="w-full bg-gray-50 border border-gray-200 rounded-full pl-11 pr-4 py-3.5 text-sm font-medium focus:outline-none focus:border-brand-primary focus:ring-1 focus:ring-brand-primary transition-all" />
-             </div>
-             
-             <div className="relative">
-               <div className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400">
-                 <MapPin className="w-[18px] h-[18px]" />
-               </div>
-               <input placeholder="Moving From" className="w-full bg-gray-50 border border-gray-200 rounded-full pl-11 pr-4 py-3.5 text-sm font-medium focus:outline-none focus:border-brand-primary focus:ring-1 focus:ring-brand-primary transition-all" />
-             </div>
-             
-             <div className="relative">
-               <div className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400">
-                 <MapPin className="w-[18px] h-[18px]" />
-               </div>
-               <input placeholder="Moving To" className="w-full bg-gray-50 border border-gray-200 rounded-full pl-11 pr-4 py-3.5 text-sm font-medium focus:outline-none focus:border-brand-primary focus:ring-1 focus:ring-brand-primary transition-all" />
-             </div>
-             
-             <button className="bg-brand-primary hover:bg-green-800 text-white rounded-full px-6 py-3.5 font-bold flex items-center justify-center gap-2 transition-colors shadow-md">
-                <div className="bg-white rounded-full p-1">
-                  <ArrowRight className="w-3 h-3 text-brand-primary" />
-                </div>
-                Submit
-             </button>
-           </div>
+      </div>
+      
+      {/* Bottom Trust Bar - FULL WIDTH */}
+      <div className="relative z-20 w-full bg-[#0a192f] border-t-4 border-brand-primary shadow-2xl">
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-10 flex flex-wrap justify-center lg:justify-between items-center gap-8 lg:gap-4">
+          
+          {/* Stat 1 */}
+          <div className="flex items-center gap-4">
+            <div className="text-brand-primary font-black text-3xl">10+</div>
+            <div className="flex flex-col">
+              <span className="text-[12px] font-extrabold text-white uppercase tracking-[0.1em] leading-tight">Years in</span>
+              <span className="text-[11px] font-bold text-gray-400 uppercase tracking-[0.1em] leading-tight">business</span>
+            </div>
+          </div>
+
+          <div className="hidden lg:block w-px h-12 bg-gray-700/50"></div>
+
+          {/* Stat 2 */}
+          <div className="flex items-center gap-4">
+            <div className="text-brand-primary font-black text-3xl">100s</div>
+            <div className="flex flex-col">
+              <span className="text-[12px] font-extrabold text-white uppercase tracking-[0.1em] leading-tight">Of moves</span>
+              <span className="text-[11px] font-bold text-gray-400 uppercase tracking-[0.1em] leading-tight">completed</span>
+            </div>
+          </div>
+
+          <div className="hidden lg:block w-px h-12 bg-gray-700/50"></div>
+
+          {/* Stat 3 */}
+          <div className="flex items-center gap-4">
+            <svg className="w-8 h-8 stroke-[2.5] fill-none stroke-brand-primary flex-shrink-0" viewBox="0 0 24 24"><polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg>
+            <div className="flex flex-col">
+              <span className="text-[12px] font-extrabold text-white uppercase tracking-[0.1em] leading-tight">Free video</span>
+              <span className="text-[11px] font-bold text-gray-400 uppercase tracking-[0.1em] leading-tight">survey quote</span>
+            </div>
+          </div>
+
+          <div className="hidden xl:block w-px h-12 bg-gray-700/50"></div>
+
+          {/* Stat 4 */}
+          <div className="flex items-center gap-4">
+            <svg className="w-8 h-8 stroke-[2.5] fill-none stroke-brand-primary flex-shrink-0" viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+            <div className="flex flex-col">
+              <span className="text-[12px] font-extrabold text-white uppercase tracking-[0.1em] leading-tight">Fixed price,</span>
+              <span className="text-[11px] font-bold text-gray-400 uppercase tracking-[0.1em] leading-tight">no hidden fees</span>
+            </div>
+          </div>
+
+          <div className="hidden xl:block w-px h-12 bg-gray-700/50"></div>
+
+          {/* Stat 5 */}
+          <div className="flex items-center gap-4">
+            <svg className="w-8 h-8 stroke-[2.5] fill-none stroke-brand-primary flex-shrink-0" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+            <div className="flex flex-col">
+              <span className="text-[12px] font-extrabold text-white uppercase tracking-[0.1em] leading-tight">Family run,</span>
+              <span className="text-[11px] font-bold text-gray-400 uppercase tracking-[0.1em] leading-tight">not franchise</span>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
