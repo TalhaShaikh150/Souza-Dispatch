@@ -5,7 +5,7 @@ import { Check, ArrowRight } from "lucide-react";
 
 export default function GallerySection() {
   return (
-    <section className="py-20 lg:py-32 bg-white overflow-hidden border-t border-gray-100">
+    <section className="pt-8 pb-20 lg:pt-12 lg:pb-32 bg-white overflow-hidden border-t border-gray-100">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           
@@ -17,7 +17,7 @@ export default function GallerySection() {
               </span>
             </div>
 
-            <h2 className="text-[36px] sm:text-[42px] lg:text-[48px] font-extrabold text-[#0a192f] leading-[1.1] tracking-tight mb-6">
+            <h2 className="text-[28px] sm:text-[36px] lg:text-[48px] font-extrabold text-[#0a192f] leading-[1.1] tracking-tight mb-5 lg:mb-6">
               Three of us. <br className="hidden sm:block" /> Same familiar faces everytime.
             </h2>
             
@@ -25,7 +25,7 @@ export default function GallerySection() {
               We are a father and his two sons. The person who quotes your move is the person carrying your sofa down the stairs.
             </p>
 
-            <ul className="space-y-6 mb-12">
+            <ul className="space-y-4 lg:space-y-6 mb-10 lg:mb-12">
               <li className="flex items-start gap-4">
                 <div className="mt-1 bg-brand-primary/10 p-1 rounded-sm flex-shrink-0">
                   <Check className="w-4 h-4 text-brand-primary stroke-[3]" />
@@ -59,7 +59,7 @@ export default function GallerySection() {
           </div>
 
           {/* Right Image */}
-          <div className="relative w-full max-w-[500px] mx-auto lg:ml-auto lg:mr-0 aspect-[4/5] mt-10 lg:mt-0">
+          <div className="relative w-full max-w-[500px] mx-auto lg:ml-auto lg:mr-0 aspect-[4/5] lg:aspect-[3/4] mt-8 lg:mt-0">
             {/* Structured background offset for editorial look */}
             <div className="absolute top-4 -right-4 w-full h-full bg-[#0a192f] opacity-5 hidden sm:block"></div>
             

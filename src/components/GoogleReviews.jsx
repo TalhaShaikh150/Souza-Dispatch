@@ -62,20 +62,20 @@ export default function GoogleReviews() {
   ];
 
   return (
-    <section className="py-24 lg:py-32 bg-white relative overflow-hidden">
+    <section className="py-12 lg:py-16 bg-white relative overflow-hidden">
       {/* Subtle Background Pattern */}
       <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:24px_24px] opacity-40 pointer-events-none"></div>
       
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Header Section */}
-        <div className="flex flex-col md:flex-row items-center justify-between mb-12 lg:mb-16 gap-6">
-          <div className="flex items-center gap-6 text-center md:text-left">
-            <div className="w-16 h-16 bg-white rounded-2xl shadow-xl flex items-center justify-center border border-gray-100 flex-shrink-0">
+        <div className="flex flex-col md:flex-row items-center justify-between mb-10 lg:mb-16 gap-6">
+          <div className="flex flex-col md:flex-row items-center gap-4 lg:gap-6 text-center md:text-left">
+            <div className="w-16 h-16 bg-white rounded-2xl shadow-xl flex items-center justify-center border border-gray-100 flex-shrink-0 mb-1 md:mb-0">
               <GoogleIcon />
             </div>
             <div>
-              <h2 className="text-2xl md:text-3xl font-extrabold text-[#0a192f] mb-2 tracking-tight">
+              <h2 className="text-[28px] md:text-3xl font-extrabold text-[#0a192f] mb-1 lg:mb-2 tracking-tight">
                 Loved by our customers
               </h2>
               <div className="flex flex-wrap items-center justify-center md:justify-start gap-2">
@@ -96,7 +96,7 @@ export default function GoogleReviews() {
               <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </a>
             
-            {/* Carousel Controls */}
+            {/* Carousel Controls (Desktop) */}
             <div className="hidden md:flex items-center gap-2 ml-4">
               <button 
                 onClick={scrollLeft} 
@@ -119,13 +119,13 @@ export default function GoogleReviews() {
         {/* Reviews Carousel */}
         <div 
           ref={scrollRef}
-          className="flex items-stretch gap-6 overflow-x-auto snap-x snap-mandatory pb-8 -mx-4 px-4 sm:mx-0 sm:px-0 hide-scrollbar"
+          className="flex items-stretch gap-4 sm:gap-6 overflow-x-auto snap-x snap-mandatory pb-8 -mx-4 px-4 sm:mx-0 sm:px-0 hide-scrollbar"
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
         >
           {reviews.map((review, idx) => (
             <div 
               key={idx} 
-              className="min-w-[300px] md:min-w-[360px] w-[85vw] md:w-[360px] flex-shrink-0 snap-start bg-white rounded-none border border-gray-100 border-t-4 border-t-brand-primary p-6 lg:p-8 shadow-[0_15px_40px_-15px_rgba(59,130,246,0.15)] flex flex-col"
+              className="min-w-[calc(100vw-32px)] w-[calc(100vw-32px)] sm:min-w-[280px] sm:w-[85vw] md:min-w-[360px] md:w-[360px] flex-shrink-0 snap-center sm:snap-start bg-white rounded-none border border-gray-100 border-t-4 border-t-brand-primary p-6 lg:p-8 shadow-[0_15px_40px_-15px_rgba(59,130,246,0.15)] flex flex-col"
             >
               <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center gap-4">
@@ -158,7 +158,25 @@ export default function GoogleReviews() {
           ))}
         </div>
         
-        <div className="mt-4 text-center md:hidden">
+        {/* Mobile Controls & Link */}
+        <div className="mt-6 md:hidden flex flex-col items-center gap-5">
+          <div className="flex items-center justify-center gap-4">
+            <button 
+              onClick={scrollLeft} 
+              className="w-12 h-12 rounded-full border-2 border-[#0a192f]/10 flex items-center justify-center hover:bg-[#0a192f] hover:text-white hover:border-[#0a192f] transition-all text-[#0a192f]"
+              aria-label="Previous reviews"
+            >
+              <ChevronLeft className="w-6 h-6" />
+            </button>
+            <button 
+              onClick={scrollRight} 
+              className="w-12 h-12 rounded-full border-2 border-[#0a192f]/10 flex items-center justify-center hover:bg-[#0a192f] hover:text-white hover:border-[#0a192f] transition-all text-[#0a192f]"
+              aria-label="Next reviews"
+            >
+              <ChevronRight className="w-6 h-6" />
+            </button>
+          </div>
+          
           <a href="https://share.google/2JzntXl5XGajCPixE" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-[13px] font-extrabold text-[#0a192f] uppercase tracking-[0.1em] hover:text-brand-primary transition-colors">
             Read all on Google <ChevronRight className="w-4 h-4" />
           </a>

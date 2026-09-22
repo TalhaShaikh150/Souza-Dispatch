@@ -15,15 +15,16 @@ export default function Hero() {
 
   useEffect(() => {
     const timer = setInterval(() => {
+
       setCurrentSlide((prev) => (prev + 1) % slides.length);
     }, 4000);
     return () => clearInterval(timer);
   }, [slides.length]);
 
   return (
-    <section className="relative pt-20 lg:pt-24 bg-[#f9fafb] overflow-visible">
+    <section className="relative pt-24 lg:pt-28 bg-[#f9fafb] overflow-visible">
       {/* Background shape removed for cleaner editorial look */}
-      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pb-12 lg:pb-24">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pb-8 lg:pb-24">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-6 2xl:gap-8 items-center">
           
           {/* Left Content */}
@@ -36,7 +37,7 @@ export default function Hero() {
             </div>
             
             {/* Title */}
-            <h1 className="text-[40px] sm:text-5xl lg:text-[52px] xl:text-[56px] 2xl:text-[60px] font-extrabold leading-[1.1] text-gray-900 mb-4 2xl:mb-6 tracking-tight">
+            <h1 className="text-[36px] sm:text-5xl lg:text-[52px] xl:text-[56px] 2xl:text-[60px] font-extrabold leading-[1.1] text-gray-900 mb-4 2xl:mb-6 tracking-tight">
               The Easy Way<br/>
               of <span className="text-brand-primary relative inline-block">
                 Moving.
@@ -67,7 +68,7 @@ export default function Hero() {
           </div>
 
           {/* Right Content */}
-          <div className="relative mt-8 lg:mt-0 w-full max-w-[500px] h-[350px] sm:h-[420px] lg:h-[380px] xl:h-[480px] mx-auto lg:ml-auto lg:mr-0">
+          <div className="relative mt-8 lg:mt-0 w-full max-w-[500px] h-[260px] sm:h-[350px] lg:h-[380px] xl:h-[480px] mx-auto lg:ml-auto lg:mr-0">
             
             {/* Structured background offset for editorial look */}
             <div className="hidden lg:block absolute top-4 -right-4 w-full h-full bg-[#0a192f] opacity-5"></div>
@@ -84,58 +85,58 @@ export default function Hero() {
       
       {/* Bottom Trust Bar - FULL WIDTH */}
       <div className="relative z-20 w-full bg-[#0a192f] border-t-4 border-brand-primary shadow-2xl">
-        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-10 flex flex-wrap justify-center lg:justify-between items-center gap-8 lg:gap-4">
+        <div className="max-w-[1400px] mx-auto px-5 sm:px-8 py-6 lg:py-10 grid grid-cols-2 md:grid-cols-3 xl:flex flex-wrap lg:justify-between items-start xl:items-center gap-6 lg:gap-4">
           
           {/* Stat 1 */}
-          <div className="flex items-center gap-4">
-            <div className="text-brand-primary font-black text-3xl">10+</div>
+          <div className="flex items-center gap-3 lg:gap-4">
+            <div className="text-brand-primary font-black text-[24px] lg:text-3xl">10+</div>
             <div className="flex flex-col">
-              <span className="text-[12px] font-extrabold text-white uppercase tracking-[0.1em] leading-tight">Years in</span>
-              <span className="text-[11px] font-bold text-gray-400 uppercase tracking-[0.1em] leading-tight">business</span>
+              <span className="text-[11px] lg:text-[12px] font-extrabold text-white uppercase tracking-[0.1em] leading-tight">Years in</span>
+              <span className="text-[10px] lg:text-[11px] font-bold text-gray-400 uppercase tracking-[0.1em] leading-tight">business</span>
             </div>
           </div>
 
-          <div className="hidden lg:block w-px h-12 bg-gray-700/50"></div>
+          <div className="hidden xl:block w-px h-12 bg-gray-700/50"></div>
 
           {/* Stat 2 */}
-          <div className="flex items-center gap-4">
-            <div className="text-brand-primary font-black text-3xl">100s</div>
+          <div className="flex items-center gap-3 lg:gap-4">
+            <div className="text-brand-primary font-black text-[24px] lg:text-3xl">100s</div>
             <div className="flex flex-col">
-              <span className="text-[12px] font-extrabold text-white uppercase tracking-[0.1em] leading-tight">Of moves</span>
-              <span className="text-[11px] font-bold text-gray-400 uppercase tracking-[0.1em] leading-tight">completed</span>
+              <span className="text-[11px] lg:text-[12px] font-extrabold text-white uppercase tracking-[0.1em] leading-tight">Of moves</span>
+              <span className="text-[10px] lg:text-[11px] font-bold text-gray-400 uppercase tracking-[0.1em] leading-tight">completed</span>
             </div>
           </div>
 
-          <div className="hidden lg:block w-px h-12 bg-gray-700/50"></div>
+          <div className="hidden xl:block w-px h-12 bg-gray-700/50"></div>
 
           {/* Stat 3 */}
-          <div className="flex items-center gap-4">
-            <svg className="w-8 h-8 stroke-[2.5] fill-none stroke-brand-primary flex-shrink-0" viewBox="0 0 24 24"><polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg>
+          <div className="flex items-center gap-3 lg:gap-4 md:col-span-1">
+            <svg className="w-6 h-6 lg:w-8 lg:h-8 stroke-[2.5] fill-none stroke-brand-primary flex-shrink-0" viewBox="0 0 24 24"><polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg>
             <div className="flex flex-col">
-              <span className="text-[12px] font-extrabold text-white uppercase tracking-[0.1em] leading-tight">Free video</span>
-              <span className="text-[11px] font-bold text-gray-400 uppercase tracking-[0.1em] leading-tight">survey quote</span>
+              <span className="text-[11px] lg:text-[12px] font-extrabold text-white uppercase tracking-[0.1em] leading-tight">Free video</span>
+              <span className="text-[10px] lg:text-[11px] font-bold text-gray-400 uppercase tracking-[0.1em] leading-tight">survey quote</span>
             </div>
           </div>
 
           <div className="hidden xl:block w-px h-12 bg-gray-700/50"></div>
 
           {/* Stat 4 */}
-          <div className="flex items-center gap-4">
-            <svg className="w-8 h-8 stroke-[2.5] fill-none stroke-brand-primary flex-shrink-0" viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+          <div className="flex items-center gap-3 lg:gap-4">
+            <svg className="w-6 h-6 lg:w-8 lg:h-8 stroke-[2.5] fill-none stroke-brand-primary flex-shrink-0" viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
             <div className="flex flex-col">
-              <span className="text-[12px] font-extrabold text-white uppercase tracking-[0.1em] leading-tight">Fixed price,</span>
-              <span className="text-[11px] font-bold text-gray-400 uppercase tracking-[0.1em] leading-tight">no hidden fees</span>
+              <span className="text-[11px] lg:text-[12px] font-extrabold text-white uppercase tracking-[0.1em] leading-tight">Fixed price,</span>
+              <span className="text-[10px] lg:text-[11px] font-bold text-gray-400 uppercase tracking-[0.1em] leading-tight">no hidden fees</span>
             </div>
           </div>
 
           <div className="hidden xl:block w-px h-12 bg-gray-700/50"></div>
 
           {/* Stat 5 */}
-          <div className="flex items-center gap-4">
-            <svg className="w-8 h-8 stroke-[2.5] fill-none stroke-brand-primary flex-shrink-0" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+          <div className="flex items-center gap-3 lg:gap-4">
+            <svg className="w-6 h-6 lg:w-8 lg:h-8 stroke-[2.5] fill-none stroke-brand-primary flex-shrink-0" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
             <div className="flex flex-col">
-              <span className="text-[12px] font-extrabold text-white uppercase tracking-[0.1em] leading-tight">Family run,</span>
-              <span className="text-[11px] font-bold text-gray-400 uppercase tracking-[0.1em] leading-tight">not franchise</span>
+              <span className="text-[11px] lg:text-[12px] font-extrabold text-white uppercase tracking-[0.1em] leading-tight">Family run,</span>
+              <span className="text-[10px] lg:text-[11px] font-bold text-gray-400 uppercase tracking-[0.1em] leading-tight">not franchise</span>
             </div>
           </div>
 

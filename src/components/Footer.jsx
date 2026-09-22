@@ -3,12 +3,12 @@ import Image from 'next/image';
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0a192f] text-white pt-20 pb-12 border-t-4 border-brand-primary">
+    <footer className="bg-[#0a192f] text-white pt-16 lg:pt-20 pb-8 lg:pb-12 border-t-4 border-brand-primary">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16 mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-16 mb-12 lg:mb-16">
           
           {/* Brand */}
-          <div className="lg:col-span-1">
+          <div className="sm:col-span-2 lg:col-span-1">
             <Link href="/" className="inline-block mb-8">
               <Image 
                 src="/images/logo.png" 
@@ -21,10 +21,14 @@ export default function Footer() {
             <p className="text-[14px] text-gray-400 mb-8 max-w-xs leading-relaxed font-medium">
               A family-run removals firm in North London. Reliable, fully insured, and fixed pricing with no hidden fees.
             </p>
-            <div className="flex items-center text-[18px] font-extrabold tracking-tight">
-              <a href="tel:02081914510" className="hover:text-brand-primary transition-colors flex items-center gap-3">
+            <div className="flex flex-col gap-3">
+              <a href="tel:02081914510" className="text-[18px] font-extrabold tracking-tight hover:text-brand-primary transition-colors flex items-center gap-3">
                 <svg className="w-5 h-5 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
                 020 8191 4510
+              </a>
+              <a href="mailto:contact@souzadispatch.com" className="text-[15px] font-medium tracking-wide text-gray-400 hover:text-brand-primary transition-colors flex items-center gap-3">
+                <svg className="w-5 h-5 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                contact@souzadispatch.com
               </a>
             </div>
           </div>

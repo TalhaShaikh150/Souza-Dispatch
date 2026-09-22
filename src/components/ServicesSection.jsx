@@ -14,7 +14,8 @@ export default function ServicesSection() {
       title: "Office & business moves",
       description: "Out of hours and weekends so your team walks into a working office on Monday.",
       image: "/images/service-2.jpg",
-      icon: <Briefcase className="w-6 h-6 text-brand-primary" />
+      icon: <Briefcase className="w-6 h-6 text-brand-primary" />,
+      imageClass: "object-top"
     },
     {
       title: "Souza Dispatch Pack and move",
@@ -31,7 +32,7 @@ export default function ServicesSection() {
   ];
 
   return (
-    <section className="py-8 lg:py-10 bg-white">
+    <section className="py-12 lg:py-16 bg-white">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
@@ -57,7 +58,7 @@ export default function ServicesSection() {
                 <img 
                   src={service.image} 
                   alt={service.title}
-                  className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  className={`absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ${service.imageClass || ''}`}
                 />
               </div>
               

@@ -25,15 +25,15 @@ export default function ProcessSection() {
   ];
 
   return (
-    <section className="py-12 lg:py-16 bg-white relative overflow-hidden">
+    <section className="pt-12 pb-6 lg:pt-16 lg:pb-8 bg-white relative overflow-hidden">
        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           
           {/* Header */}
-          <div className="text-center max-w-3xl mx-auto mb-16 lg:mb-24">
+          <div className="text-center max-w-3xl mx-auto mb-12 lg:mb-24">
              <div className="inline-flex items-center gap-2 bg-blue-50 border border-blue-100 rounded-full py-1.5 px-4 mb-6 shadow-sm">
-               <span className="text-[13px] font-bold text-brand-primary uppercase tracking-widest">How it works</span>
+               <span className="text-[12px] lg:text-[13px] font-bold text-brand-primary uppercase tracking-widest">How it works</span>
              </div>
-             <h2 className="text-[36px] sm:text-[42px] lg:text-[52px] font-extrabold text-gray-900 leading-[1.15] tracking-tight">
+             <h2 className="text-[28px] sm:text-[36px] lg:text-[52px] font-extrabold text-gray-900 leading-[1.15] tracking-tight">
                 A price in ten minutes, without anyone visiting your <span className="text-brand-primary">house.</span>
              </h2>
           </div>
@@ -46,21 +46,21 @@ export default function ProcessSection() {
              {steps.map((step, idx) => (
                 <div key={idx} className="relative flex flex-col items-center text-center group z-10">
                    {/* Big Icon Container */}
-                   <div className="w-24 h-24 rounded-full bg-white border border-gray-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] flex items-center justify-center mb-8 relative transition-transform duration-300 group-hover:-translate-y-2">
-                     <div className={`w-16 h-16 rounded-full ${step.color} flex items-center justify-center`}>
+                   <div className="w-20 h-20 lg:w-24 lg:h-24 rounded-full bg-white border border-gray-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] flex items-center justify-center mb-6 lg:mb-8 relative transition-transform duration-300 group-hover:-translate-y-2">
+                     <div className={`w-12 h-12 lg:w-16 lg:h-16 rounded-full ${step.color} flex items-center justify-center`}>
                         {step.icon}
                      </div>
                      {/* Number Badge */}
-                     <div className="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-[#0F172A] text-white flex items-center justify-center font-bold text-sm shadow-lg border-2 border-white">
+                     <div className="absolute -top-1 -right-1 lg:-top-2 lg:-right-2 w-7 h-7 lg:w-8 lg:h-8 rounded-full bg-[#0F172A] text-white flex items-center justify-center font-bold text-xs lg:text-sm shadow-lg border-2 border-white">
                         {idx + 1}
                      </div>
                    </div>
 
                    {/* Text Content */}
-                   <h3 className="text-2xl font-extrabold text-gray-900 mb-4 group-hover:text-brand-primary transition-colors">
+                   <h3 className="text-xl lg:text-2xl font-extrabold text-gray-900 mb-3 lg:mb-4 group-hover:text-brand-primary transition-colors">
                      {step.title}
                    </h3>
-                   <p className="text-gray-500 text-[15px] font-medium leading-relaxed max-w-sm">
+                   <p className="text-gray-500 text-[14px] lg:text-[15px] font-medium leading-relaxed max-w-sm">
                      {step.desc}
                    </p>
                 </div>
