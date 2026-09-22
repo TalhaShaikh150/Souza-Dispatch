@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import CtaSection from '@/components/CtaSection';
 
 export const metadata = {
   title: "Moving Services in London & UK | SouzaDispatch",
@@ -106,6 +107,8 @@ export default function ServicesPage() {
           </div>
         ))}
       </section>
+
+      <CtaSection />
     </div>
   );
 }

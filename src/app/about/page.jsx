@@ -1,126 +1,157 @@
-import Image from 'next/image';
 import Link from 'next/link';
-import { ShieldCheck, Users, MapPin, Heart } from 'lucide-react';
+import { Phone } from 'lucide-react';
+import CtaSection from '@/components/CtaSection';
 
 export const metadata = {
-  title: "About SouzaDispatch | Trusted Removals Company in London",
-  description: "Learn more about SouzaDispatch, a family-run removals company in London providing professional, compassionate, and reliable moving services.",
+  title: "About Us | SouzaDispatch Removals",
+  description: "A father and two sons, ten years of North London moves.",
 };
 
-const values = [
-  {
-    icon: Users,
-    title: "Family-Run Business",
-    desc: "As a father and son team, we treat every customer like family. Your belongings are handled with the personal care and respect they deserve."
-  },
-  {
-    icon: ShieldCheck,
-    title: "Fully Insured & Secure",
-    desc: "Peace of mind comes standard. We are fully insured and use professional-grade protective equipment to guarantee the safety of your items."
-  },
-  {
-    icon: MapPin,
-    title: "London & UK Wide",
-    desc: "Based in London, we possess intricate knowledge of local routes and logistics, but our reliable services extend anywhere nationwide."
-  },
-  {
-    icon: Heart,
-    title: "Compassionate Care",
-    desc: "Moving is a stressful life event. We bring a calm, compassionate, and supportive attitude to every job to make your transition effortless."
-  }
-];
-
 export default function AboutPage() {
+  const team = [
+    {
+      name: "Esteban",
+      title: "Founder",
+      image: "/images/esteban.jpg"
+    },
+    {
+      name: "Thiago",
+      title: "Founder",
+      image: "/images/thiago.jpg"
+    },
+    {
+      name: "Jose",
+      title: "", // Just Jose as requested
+      image: "/images/jose.jpg"
+    }
+  ];
+
   return (
-    <div className="bg-brand-white">
+    <div className="bg-white">
       {/* Hero Section */}
-      <section className="relative py-20 lg:py-32 bg-brand-dark overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
-          {/* Subtle background pattern */}
-          <div className="absolute w-[500px] h-[500px] bg-[#00ace0] rounded-full blur-[150px] -top-[200px] -right-[100px]"></div>
-        </div>
-        
-        <div className="relative max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <span className="text-[#00ace0] font-bold text-[13px] tracking-wider uppercase mb-3 block">
-            ABOUT SOUZADISPATCH
+      <section className="bg-[#0a192f] pt-32 pb-24 lg:pt-40 lg:pb-32 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[1200px] mx-auto">
+          <span className="text-brand-primary text-[13px] font-extrabold uppercase tracking-[0.15em] mb-4 block">
+            ABOUT US
           </span>
-          <h1 className="text-[36px] sm:text-[45px] lg:text-[55px] font-bold text-white mb-6 leading-tight max-w-3xl mx-auto">
-            London's Most Trusted Family-Run Movers
+          <h1 className="text-white text-4xl sm:text-5xl lg:text-[64px] font-extrabold leading-[1.1] mb-6 tracking-tight max-w-4xl">
+            A father and two sons, ten years of North London moves
           </h1>
-          <p className="text-[16px] lg:text-[18px] text-gray-300 leading-relaxed max-w-2xl mx-auto">
-            We aren't just moving boxes; we're moving lives. Discover the story behind our commitment to stress-free, professional relocations.
-          </p>
         </div>
       </section>
 
-      {/* Story Section */}
-      <section className="py-20 lg:py-32">
-        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col lg:flex-row gap-16 items-center">
-            <div className="w-full lg:w-1/2">
-              <div className="relative aspect-[4/3] rounded-[32px] overflow-hidden shadow-sm">
-                <Image 
-                  src="/assets/hero.jpg" 
-                  alt="Esteban and Team at SouzaDispatch" 
-                  fill
-                  className="object-cover"
-                />
-              </div>
-            </div>
-            
-            <div className="w-full lg:w-1/2">
-              <h2 className="text-[32px] lg:text-[40px] font-bold text-brand-dark mb-6 leading-tight">
-                Built on Trust, Delivered with Care
-              </h2>
-              <div className="space-y-6 text-[16px] lg:text-[17px] text-brand-slate leading-relaxed">
-                <p>
-                  SouzaDispatch was founded on a simple principle: moving shouldn't be the most stressful day of your year. Led by Esteban and his father, our family-run removals company brings a unique, personal touch to the logistics industry.
-                </p>
-                <p>
-                  Operating out of London, we understand the complexities of city relocations—from navigating narrow staircases in historic flats to coordinating seamless long-distance transitions across the UK. 
-                </p>
-                <p>
-                  Our reputation in the Local Pack and beyond is built on punctuality, transparent upfront pricing, and an unwavering commitment to keeping your possessions safe. When you book with SouzaDispatch, you're not getting a faceless corporate fleet; you're getting a dedicated team that genuinely cares about your home.
-                </p>
-              </div>
-              
-              <div className="mt-10">
-                <Link href="/contact" className="inline-flex items-center justify-center px-8 py-4 bg-[#00ace0] text-white font-bold rounded-lg hover:bg-[#0095c2] transition-colors shadow-sm">
-                  Work With Us
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Values Section */}
-      <section className="py-20 lg:py-32 bg-slate-50 border-t border-gray-100">
-        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16 lg:mb-24">
-            <h2 className="text-[32px] lg:text-[40px] font-bold text-brand-dark">Our Core Values</h2>
-          </div>
+      {/* Story & Stats Section */}
+      <section className="py-20 lg:py-32 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[1200px] mx-auto grid lg:grid-cols-12 gap-16 lg:gap-24">
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
-            {values.map((val, idx) => {
-              const Icon = val.icon;
-              return (
-                <div key={idx} className="bg-white p-8 lg:p-10 rounded-[24px] shadow-sm border border-gray-100 flex gap-6">
-                  <div className="flex-shrink-0">
-                    <div className="w-14 h-14 rounded-2xl bg-[#00ace0]/10 flex items-center justify-center text-[#00ace0]">
-                      <Icon className="w-7 h-7" />
-                    </div>
-                  </div>
-                  <div>
-                    <h3 className="text-[20px] font-bold text-brand-dark mb-3">{val.title}</h3>
-                    <p className="text-[15px] text-brand-slate leading-relaxed">{val.desc}</p>
-                  </div>
+          {/* Main Story (Left) */}
+          <div className="lg:col-span-7 flex flex-col gap-6 text-[17px] sm:text-[19px] text-gray-600 font-medium leading-relaxed">
+            <p>
+              <strong className="text-[#0a192f] font-extrabold">SouzaDispatch</strong> is three people: Esteban, Thiago and Jose. Two brothers and their dad, all building together.
+            </p>
+            <p>
+              We have been moving people around North London for over ten years, first as a pair of hands other firms called on, now under our own name. Hundreds of moves later the job has not really changed: turn up when you said you would, treat somebody's things the way you would want yours treated, and charge what you quoted.
+            </p>
+            <p>
+              What that means in practice is that there is no call centre between you and the crew. The person who reads your video and works out the price is one of the three of us, and he will be there on the day with the blankets.
+            </p>
+          </div>
+
+          {/* At a Glance Stats (Right) */}
+          <div className="lg:col-span-5">
+            <div className="bg-[#f8fafc] rounded-3xl p-8 sm:p-10 border border-gray-100">
+              <h3 className="text-[#0a192f] text-[20px] font-extrabold mb-8 uppercase tracking-wider">
+                At a glance
+              </h3>
+              
+              <ul className="space-y-8">
+                <li>
+                  <div className="text-brand-primary font-black text-3xl mb-1">10+ years</div>
+                  <div className="text-gray-600 font-bold text-[15px] uppercase tracking-wide">in business</div>
+                </li>
+                <li>
+                  <div className="text-brand-primary font-black text-3xl mb-1">Hundreds</div>
+                  <div className="text-gray-600 font-bold text-[15px] uppercase tracking-wide">of moves completed</div>
+                </li>
+                <li>
+                  <div className="text-brand-primary font-black text-3xl mb-1">North London</div>
+                  <div className="text-gray-600 font-bold text-[15px] uppercase tracking-wide">our home patch</div>
+                </li>
+                <li>
+                  <div className="text-brand-primary font-black text-3xl mb-1">7 days</div>
+                  <div className="text-gray-600 font-bold text-[15px] uppercase tracking-wide">a week, evenings included</div>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      {/* The Team */}
+      <section className="py-20 lg:py-32 bg-gray-50 border-y border-gray-100 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[1200px] mx-auto">
+          <h2 className="text-[32px] sm:text-[40px] font-extrabold text-[#0a192f] leading-[1.15] tracking-tight mb-12 lg:mb-16">
+            The three of us
+          </h2>
+          
+          <div className="grid sm:grid-cols-3 gap-8 lg:gap-12">
+            {team.map((member, idx) => (
+              <div key={idx} className="flex flex-col group">
+                <div className="w-full aspect-[4/5] rounded-2xl overflow-hidden mb-6 shadow-sm relative">
+                  <img 
+                    src={member.image} 
+                    alt={member.name}
+                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 object-top"
+                  />
                 </div>
-              );
-            })}
+                <h3 className="text-2xl font-extrabold text-[#0a192f] mb-1 tracking-tight">{member.name}</h3>
+                {member.title && (
+                  <span className="text-brand-primary font-bold uppercase tracking-wider text-[13px]">
+                    {member.title}
+                  </span>
+                )}
+              </div>
+            ))}
           </div>
         </div>
       </section>
+
+      {/* Where We Work */}
+      <section className="py-20 lg:py-32 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[1200px] mx-auto flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
+          
+          <div className="w-full lg:w-1/2">
+            <div className="w-full aspect-[4/3] rounded-3xl overflow-hidden shadow-sm relative">
+              <img 
+                src="/images/family.jpg" // Placeholder for crew in front of van
+                alt="SouzaDispatch Crew"
+                className="absolute inset-0 w-full h-full object-cover object-center"
+              />
+            </div>
+          </div>
+
+          <div className="w-full lg:w-1/2">
+            <span className="text-[13px] font-extrabold text-brand-primary uppercase tracking-[0.15em] mb-4 block">
+              Where we work
+            </span>
+            <h2 className="text-[32px] sm:text-[40px] font-extrabold text-[#0a192f] leading-[1.15] tracking-tight mb-6">
+              North London, and wherever the move ends
+            </h2>
+            <div className="text-[17px] sm:text-[18px] text-gray-600 font-medium leading-relaxed space-y-6">
+              <p>
+                North London is where we live and where most of our work is. We know the estates with no loading bay, the roads that go one way at the wrong end, and which councils want a permit for the van.
+              </p>
+              <p>
+                If your new place is outside London, that is fine. The pick-up is the part that needs local knowledge, and the drive is just the drive.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <CtaSection />
     </div>
   );
 }
